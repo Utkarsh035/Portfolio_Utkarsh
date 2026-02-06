@@ -417,6 +417,56 @@ document.addEventListener("DOMContentLoaded", () => {
     revealObserver.observe(el);
   });
 
+  // ========== Contact Form Submission ==========
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      
+      const formData = new FormData(contactForm);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      formStatus.innerHTML = "Sending...";
+      formStatus.className = "form-status";
+      formStatus.style.display = "block";
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          formStatus.innerHTML = "Message sent successfully! I'll get back to you soon.";
+          formStatus.className = "form-status success";
+          contactForm.reset();
+        } else {
+          console.log(response);
+          formStatus.innerHTML = json.message;
+          formStatus.className = "form-status error";
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        formStatus.innerHTML = "Something went wrong!";
+        formStatus.className = "form-status error";
+      })
+      .then(function() {
+        setTimeout(() => {
+          formStatus.style.display = "none";
+          formStatus.className = "form-status";
+        }, 5000);
+      });
+    });
+  }
+
   // ========== Footer Year ==========
   const yearEl = document.querySelector('.footer-copy');
   if (yearEl) {
