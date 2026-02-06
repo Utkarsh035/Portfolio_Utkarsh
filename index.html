@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utkarsh Tripathi | Software Developer</title>
+  <meta name="description"
+    content="Utkarsh Tripathi - Software Developer, Java Full Stack Developer & Web Developer. View my portfolio and projects." />
+
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Floating Dots Background -->
+  <div class="floating-dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <!-- Glowing Boxes -->
+  <div class="glow-boxes">
+    <div class="glow-box"></div>
+    <div class="glow-box"></div>
+    <div class="glow-box"></div>
+  </div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-text">
+        <span>U</span><span>T</span><span>K</span><span>A</span><span>R</span><span>S</span><span>H</span>
+      </div>
+      <div class="preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- Grain Effect -->
+  <div class="grain"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">UT</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#work" class="nav-link" data-text="Work">Work</a>
+        <a href="#about" class="nav-link" data-text="About">About</a>
+        <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
+        <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://drive.google.com/file/d/1rB98dvk2o0AOCLT51MdChHxAhkgOZ36O/view?usp=drivesdk" target="_blank"
+          class="nav-cta">
+          <span>Resume</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <button class="nav-toggle" id="navToggle">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span>
+        <span>Utkarsh's Portfolio • Available for opportunities</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line">
+          <span class="title-word" data-delay="0">Creative</span>
+        </span>
+        <span class="title-line">
+          <span class="title-word" data-delay="1">Developer</span>
+          <span class="title-word accent" data-delay="2">&</span>
+        </span>
+        <span class="title-line">
+          <span class="title-word" data-delay="3">Problem</span>
+          <span class="title-word" data-delay="4">Solver</span>
+        </span>
+      </h1>
+
+      <p class="hero-desc">
+        I'm <strong>Utkarsh Tripathi</strong>, a full-stack developer crafting
+        digital experiences with clean code and creative solutions.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary">
+          <span>View Projects</span>
+          <div class="btn-arrow">
+            <i class="fas fa-arrow-down"></i>
+          </div>
+        </a>
+        <a href="#contact" class="btn-outline">
+          <span>Let's Talk</span>
+        </a>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span>Scroll</span>
+      </div>
+    </div>
+
+    <div class="hero-marquee">
+      <div class="marquee-track">
+        <span>Java Developer</span>
+        <span>•</span>
+        <span>Full Stack</span>
+        <span>•</span>
+        <span>Web Developer</span>
+        <span>•</span>
+        <span>Backend Specialist</span>
+        <span>•</span>
+        <span>Java Developer</span>
+        <span>•</span>
+        <span>Full Stack</span>
+        <span>•</span>
+        <span>Web Developer</span>
+        <span>•</span>
+        <span>Backend Specialist</span>
+        <span>•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="section work" id="work">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-desc">Projects I've built with passion and precision</p>
+      </header>
+
+      <div class="projects">
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-image-inner">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <div class="project-overlay">
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Web Application</span>
+            <h3 class="project-title">Geo Vendor</h3>
+            <p class="project-desc">
+              A comprehensive platform enabling users to discover and connect with
+              nearby vendors through real-time geolocation.
+            </p>
+            <div class="project-stack">
+              <span>JavaScript</span>
+              <span>Google Maps API</span>
+              <span>Geolocation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <div class="project-image-inner">
+              <i class="fas fa-plane"></i>
+            </div>
+            <div class="project-overlay">
+              <span>View Project</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-category">Website</span>
+            <h3 class="project-title">Travel Agency</h3>
+            <p class="project-desc">
+              A visually stunning travel agency website with interactive UI
+              components for seamless booking experiences.
+            </p>
+            <div class="project-stack">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-image">
+            <div class="about-image-frame">
+              <div class="about-image-inner">
+                <i class="fas fa-code"></i>
+              </div>
+            </div>
+            <div class="about-image-badge">
+              <span class="badge-number">100%</span>
+              <span class="badge-text">Dedication</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <header class="section-header left">
+            <span class="section-number">02</span>
+            <h2 class="section-title">About Me</h2>
+          </header>
+
+          <div class="about-text">
+            <p class="text-large">
+              I'm a passionate software developer with a strong foundation in
+              Java, web development, and database management.
+            </p>
+            <p>
+              With hands-on experience in both frontend and backend technologies,
+              I enjoy building functional, user-friendly applications that solve
+              real-world problems. Currently seeking opportunities to contribute
+              to innovative projects and grow as a full-stack developer.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-value">5+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">2+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">∞</span>
+              <span class="stat-label">Curiosity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <header class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-desc">Technologies I work with daily</p>
+      </header>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <div class="skill-icon">
+              <i class="fas fa-palette"></i>
+            </div>
+            <h3>Frontend</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fab fa-html5"></i><span>HTML5</span></li>
+            <li><i class="fab fa-css3-alt"></i><span>CSS3</span></li>
+            <li><i class="fab fa-js-square"></i><span>JavaScript</span></li>
+            <li><i class="fab fa-bootstrap"></i><span>Bootstrap</span></li>
+            <li><i class="fas fa-code"></i><span>jQuery</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Backend</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fab fa-java"></i><span>Java (Core & Advanced)</span></li>
+            <li><i class="fas fa-leaf"></i><span>Spring Boot</span></li>
+            <li><i class="fas fa-code"></i><span>JSP, Servlets, JDBC</span></li>
+            <li><i class="fas fa-database"></i><span>JPA / Hibernate</span></li>
+            <li><i class="fas fa-plug"></i><span>REST API</span></li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-header">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Database & Tools</h3>
+          </div>
+          <ul class="skill-list">
+            <li><i class="fas fa-database"></i><span>MySQL</span></li>
+            <li><i class="fas fa-database"></i><span>Oracle Apex</span></li>
+            <li><i class="fab fa-linux"></i><span>Linux</span></li>
+            <li><i class="fab fa-git-alt"></i><span>Git</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <header class="section-header center">
+          <span class="section-number">04</span>
+          <h2 class="section-title large">Let's Create<br>Something Great</h2>
+          <p class="section-desc">
+            Have a project in mind? Let's discuss how we can work together.
+          </p>
+        </header>
+
+        <div class="contact-cta">
+          <a href="mailto:utkarshtripathi180@gmail.com" class="contact-email">
+            <span>utkarshtripathi180@gmail.com</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="contact-info">
+          <a href="tel:9044834938" class="contact-phone">
+            <i class="fas fa-phone"></i>
+            <span>+91 9044834938</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/utkarsh-tripathi-402935284" target="_blank" class="social-link">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:utkarshtripathi180@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="https://github.com" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">
+          © 2025 <span>Utkarsh Tripathi</span>. All rights reserved.
+        </p>
+        <p class="footer-note">
+          Designed & Built with <i class="fas fa-heart"></i>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
