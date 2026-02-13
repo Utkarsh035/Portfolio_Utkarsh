@@ -558,6 +558,19 @@ body {
   transition: all var(--duration-fast) ease;
 }
 
+.nav-toggle.active span:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+
+.mobile-resume {
+  display: none;
+}
+
 /* ---------- Hero Section ---------- */
 .hero {
   position: relative;
@@ -1412,7 +1425,9 @@ body {
     align-items: center;
     gap: var(--space-lg);
     transition: right var(--duration) var(--ease-out);
+    z-index: 1000;
   }
+
 
   .nav-menu.active {
     right: 0;
@@ -1423,9 +1438,24 @@ body {
     font-family: var(--font-display);
   }
 
+  .nav-menu .mobile-resume {
+    display: block;
+    color: var(--accent);
+    transition: color var(--duration-fast) ease;
+  }
+
+  .nav-menu .mobile-resume:hover {
+    color: transparent;
+  }
+
+
+
   .nav-toggle {
     display: flex;
+    z-index: 1001;
+    /* Ensure on top of menu */
   }
+
 
   .nav-cta {
     display: none;
