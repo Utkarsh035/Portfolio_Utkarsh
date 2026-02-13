@@ -1532,6 +1532,19 @@ body {
     display: none;
   }
 
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle i {
+    font-size: 0.9rem;
+  }
+
   .hero-scroll {
     display: none;
   }
