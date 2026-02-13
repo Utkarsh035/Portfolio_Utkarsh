@@ -7,6 +7,27 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register GSAP plugins
   gsap.registerPlugin(ScrollTrigger);
 
+  // ========== Theme Toggle ==========
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlEl = document.documentElement;
+
+  // Restore saved theme (default: dark)
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    htmlEl.setAttribute('data-theme', 'light');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      htmlEl.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      htmlEl.setAttribute('data-theme', 'light');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
   // ========== Preloader ==========
   const preloader = document.getElementById('preloader');
 
