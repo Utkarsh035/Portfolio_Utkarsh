@@ -493,4 +493,138 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) {
     yearEl.innerHTML = yearEl.innerHTML.replace('2025', new Date().getFullYear());
   }
+
+  // ========== Minimal 3D Animation (Three.js) ==========
+  const canvas3D = document.getElementById('hero-3d-canvas');
+  if (canvas3D && typeof THREE !== 'undefined') {
+    const scene = new THREE.Scene();
+    
+    // Transparent background
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas3D, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // optimize performance
+    
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 30;
+
+    // Create a group
+    const group = new THREE.Group();
+    scene.add(group);
+
+    // Initial color from theme
+    const getAccentColor = () => {
+      const computed = getComputedStyle(document.documentElement);
+      return computed.getPropertyValue('--accent').trim() || '#ff6b35';
+    };
+
+    let accentColor = getAccentColor();
+    
+    // Abstract geometric shapes (Wireframe)
+    // Outer shape
+    const geometry1 = new THREE.IcosahedronGeometry(8, 0);
+    const material1 = new THREE.MeshBasicMaterial({ 
+      color: new THREE.Color(accentColor), 
+      wireframe: true,
+      transparent: true,
+      opacity: 0.15
+    });
+    const shape1 = new THREE.Mesh(geometry1, material1);
+    
+    // Middle shape
+    const geometry2 = new THREE.OctahedronGeometry(4.5, 0);
+    const material2 = new THREE.MeshBasicMaterial({ 
+      color: new THREE.Color(accentColor), 
+      wireframe: true,
+      transparent: true,
+      opacity: 0.3
+    });
+    const shape2 = new THREE.Mesh(geometry2, material2);
+
+    // Inner shape
+    const geometry3 = new THREE.DodecahedronGeometry(2, 0);
+    const material3 = new THREE.MeshBasicMaterial({
+      color: new THREE.Color(accentColor),
+      wireframe: true,
+      transparent: true,
+      opacity: 0.5
+    });
+    const shape3 = new THREE.Mesh(geometry3, material3);
+
+    group.add(shape1);
+    group.add(shape2);
+    group.add(shape3);
+
+    function resize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+
+      // Responsive positioning
+      if (width < 768) {
+        // Shift it down and to the right, scale it smaller to avoid text
+        group.position.set(6, -6, -15);
+        group.scale.set(0.5, 0.5, 0.5);
+      } else {
+        group.position.set(12, 0, 0); // shift to the right side
+        group.scale.set(1, 1, 1);
+      }
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Mouse interaction for parallax
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX - window.innerWidth / 2);
+      mouseY = (event.clientY - window.innerHeight / 2);
+    });
+
+    const clock = new THREE.Clock();
+
+    function animate3D() {
+      requestAnimationFrame(animate3D);
+      const elapsedTime = clock.getElapsedTime();
+
+      // Gentle rotation for all shapes
+      shape1.rotation.x = elapsedTime * 0.1;
+      shape1.rotation.y = elapsedTime * 0.15;
+      
+      shape2.rotation.x = -elapsedTime * 0.2;
+      shape2.rotation.y = elapsedTime * 0.25;
+
+      shape3.rotation.x = elapsedTime * 0.3;
+      shape3.rotation.y = -elapsedTime * 0.35;
+
+      // Smooth mouse parallax effect on the group
+      targetX = mouseX * 0.001;
+      targetY = mouseY * 0.001;
+      
+      group.rotation.x += 0.05 * (targetY - group.rotation.x);
+      group.rotation.y += 0.05 * (targetX - group.rotation.y);
+
+      renderer.render(scene, camera);
+    }
+    
+    animate3D();
+
+    // Listen to theme changes to update the wireframe color
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          const newColor = new THREE.Color(getAccentColor());
+          shape1.material.color = newColor;
+          shape2.material.color = newColor;
+          shape3.material.color = newColor;
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  }
 });
