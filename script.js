@@ -210,6 +210,45 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Timeline items (3D smooth)
+    gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+      const content = item.querySelector('.timeline-content');
+      const dot = item.querySelector('.timeline-dot');
+      
+      const isEven = i % 2 === 1; // 0-indexed
+      const xOffset = isEven ? 50 : -50;
+      const rotateY = isEven ? -15 : 15;
+
+      gsap.from(content, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        },
+        x: window.innerWidth > 768 ? xOffset : -30,
+        y: 40,
+        z: -100,
+        rotateY: window.innerWidth > 768 ? rotateY : 5,
+        rotateX: 10,
+        opacity: 0,
+        duration: 1,
+        ease: 'back.out(1.2)'
+      });
+
+      gsap.from(dot, {
+        scrollTrigger: {
+          trigger: item,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        },
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.2,
+        ease: 'back.out(2)'
+      });
+    });
+
     // Stats counter animation
     gsap.utils.toArray('.stat-value').forEach(stat => {
       const value = stat.textContent;
