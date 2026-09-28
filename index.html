@@ -21,6 +21,7 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#work">Skip to content</a>
   <!-- Floating Dots Background -->
   <div class="floating-dots">
     <div class="dot"></div>
@@ -61,7 +62,7 @@
   <div class="grain"></div>
 
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" aria-label="Primary navigation">
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <span class="logo-text">UT</span>
@@ -71,6 +72,7 @@
       <div class="nav-menu" id="navMenu">
         <a href="#work" class="nav-link" data-text="Work">Work</a>
         <a href="#about" class="nav-link" data-text="About">About</a>
+        <a href="#experience" class="nav-link" data-text="Journey">Journey</a>
         <a href="#skills" class="nav-link" data-text="Skills">Skills</a>
         <a href="#contact" class="nav-link" data-text="Contact">Contact</a>
         <a href="https://drive.google.com/file/d/1rB98dvk2o0AOCLT51MdChHxAhkgOZ36O/view?usp=drivesdk" target="_blank"
@@ -78,7 +80,7 @@
       </div>
 
       <div class="nav-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
           <i class="fas fa-sun"></i>
           <i class="fas fa-moon"></i>
         </button>
@@ -87,7 +89,7 @@
           <span>Resume</span>
           <i class="fas fa-arrow-right"></i>
         </a>
-        <button class="nav-toggle" id="navToggle">
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu" aria-controls="navMenu" aria-expanded="false">
           <span></span>
           <span></span>
         </button>
@@ -95,8 +97,9 @@
     </div>
   </nav>
 
+  <main>
   <!-- Hero Section -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" aria-labelledby="hero-title">
     <div class="hero-bg">
       <div class="hero-gradient"></div>
       <div class="hero-grid"></div>
@@ -106,10 +109,10 @@
     <div class="hero-content">
       <div class="hero-tag">
         <span class="tag-dot"></span>
-        <span>Utkarsh's Portfolio • Available for opportunities</span>
+        <span>Utkarsh's Portfolio - Available for opportunities</span>
       </div>
 
-      <h1 class="hero-title">
+      <h1 class="hero-title" id="hero-title">
         <span class="title-line">
           <span class="title-word" data-delay="0">Creative</span>
         </span>
@@ -127,6 +130,21 @@
         I'm <strong>Utkarsh Tripathi</strong>, a full-stack developer crafting
         digital experiences with clean code and creative solutions.
       </p>
+
+      <div class="hero-proof" aria-label="Portfolio highlights">
+        <div>
+          <strong>Java</strong>
+          <span>Core backend foundation</span>
+        </div>
+        <div>
+          <strong>Spring Boot</strong>
+          <span>REST API focused</span>
+        </div>
+        <div>
+          <strong>Frontend</strong>
+          <span>Responsive web UI</span>
+        </div>
+      </div>
 
       <div class="hero-ctas">
         <a href="#work" class="btn-primary">
@@ -149,31 +167,31 @@
     <div class="hero-marquee">
       <div class="marquee-track">
         <span>Java Developer</span>
-        <span>•</span>
+        <span>-</span>
         <span>Full Stack</span>
-        <span>•</span>
+        <span>-</span>
         <span>Web Developer</span>
-        <span>•</span>
+        <span>-</span>
         <span>Backend Specialist</span>
-        <span>•</span>
+        <span>-</span>
         <span>Java Developer</span>
-        <span>•</span>
+        <span>-</span>
         <span>Full Stack</span>
-        <span>•</span>
+        <span>-</span>
         <span>Web Developer</span>
-        <span>•</span>
+        <span>-</span>
         <span>Backend Specialist</span>
-        <span>•</span>
+        <span>-</span>
       </div>
     </div>
   </section>
 
   <!-- Work Section -->
-  <section class="section work" id="work">
+  <section class="section work" id="work" aria-labelledby="work-title">
     <div class="container">
       <header class="section-header">
         <span class="section-number">01</span>
-        <h2 class="section-title">Selected Work</h2>
+        <h2 class="section-title" id="work-title">Selected Work</h2>
         <p class="section-desc">Projects I've built with passion and precision</p>
       </header>
 
@@ -194,6 +212,10 @@
               A comprehensive platform enabling users to discover and connect with
               nearby vendors through real-time geolocation.
             </p>
+            <div class="project-metrics">
+              <span><i class="fas fa-location-crosshairs"></i> Location-first UX</span>
+              <span><i class="fas fa-bolt"></i> Fast discovery flow</span>
+            </div>
             <div class="project-stack">
               <span>JavaScript</span>
               <span>Google Maps API</span>
@@ -218,6 +240,10 @@
               A visually stunning travel agency website with interactive UI
               components for seamless booking experiences.
             </p>
+            <div class="project-metrics">
+              <span><i class="fas fa-compass"></i> Booking journey</span>
+              <span><i class="fas fa-mobile-screen"></i> Mobile ready</span>
+            </div>
             <div class="project-stack">
               <span>HTML5</span>
               <span>CSS3</span>
@@ -230,14 +256,23 @@
   </section>
 
   <!-- About Section -->
-  <section class="section about" id="about">
+  <section class="section about" id="about" aria-labelledby="about-title">
     <div class="container">
       <div class="about-grid">
         <div class="about-visual">
           <div class="about-image">
             <div class="about-image-frame">
               <div class="about-image-inner">
-                <i class="fas fa-code"></i>
+                <div class="profile-card">
+                  <span class="profile-kicker">Currently building</span>
+                  <strong>Full-stack web apps</strong>
+                  <p>Clean interfaces, reliable backend logic, and practical problem solving.</p>
+                  <div class="profile-tags">
+                    <span>Java</span>
+                    <span>REST APIs</span>
+                    <span>MySQL</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="about-image-badge">
@@ -250,7 +285,7 @@
         <div class="about-content">
           <header class="section-header left">
             <span class="section-number">02</span>
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" id="about-title">About Me</h2>
           </header>
 
           <div class="about-text">
@@ -276,7 +311,7 @@
               <span class="stat-label">Projects</span>
             </div>
             <div class="stat">
-              <span class="stat-value">∞</span>
+              <span class="stat-value">Always</span>
               <span class="stat-label">Curiosity</span>
             </div>
           </div>
@@ -286,11 +321,11 @@
   </section>
 
   <!-- Experience Section -->
-  <section class="section experience" id="experience">
+  <section class="section experience" id="experience" aria-labelledby="experience-title">
     <div class="container">
       <header class="section-header">
         <span class="section-number">03</span>
-        <h2 class="section-title">Experience</h2>
+        <h2 class="section-title" id="experience-title">Experience</h2>
         <p class="section-desc">My professional journey and background</p>
       </header>
 
@@ -300,7 +335,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2025 — Present</div>
+            <div class="timeline-date">2025 - Present</div>
             <h3 class="timeline-role">Advanced Backend Focus</h3>
             <span class="timeline-company">Spring Boot & REST APIs</span>
             <p class="timeline-desc">Mastering robust backend architectures using Spring Boot. Actively developing and
@@ -311,7 +346,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2024 — 2025</div>
+            <div class="timeline-date">2024 - 2025</div>
             <h3 class="timeline-role">Java Full Stack Development</h3>
             <span class="timeline-company">Training & Projects</span>
             <p class="timeline-desc">Learned comprehensive Java full stack technologies. Engineered integrated solutions
@@ -322,7 +357,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2023 — 2024</div>
+            <div class="timeline-date">2023 - 2024</div>
             <h3 class="timeline-role">Web Development Focus</h3>
             <span class="timeline-company">Academic Phase</span>
             <p class="timeline-desc">Mastered frontend fundamentals creating highly responsive, interactive, and
@@ -333,7 +368,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2022 — 2023</div>
+            <div class="timeline-date">2022 - 2023</div>
             <h3 class="timeline-role">Core Programming Foundation</h3>
             <span class="timeline-company">Initial Journey</span>
             <p class="timeline-desc">Established a deep understanding of Object-Oriented Programming principles using
@@ -345,11 +380,11 @@
   </section>
 
   <!-- Skills Section -->
-  <section class="section skills" id="skills">
+  <section class="section skills" id="skills" aria-labelledby="skills-title">
     <div class="container">
       <header class="section-header">
         <span class="section-number">04</span>
-        <h2 class="section-title">Tech Stack</h2>
+        <h2 class="section-title" id="skills-title">Tech Stack</h2>
         <p class="section-desc">Technologies I work with daily</p>
       </header>
 
@@ -405,12 +440,12 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="section contact" id="contact">
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="container">
       <div class="contact-wrapper">
         <header class="section-header center">
           <span class="section-number">05</span>
-          <h2 class="section-title large">Let's Create<br>Something Great</h2>
+          <h2 class="section-title large" id="contact-title">Let's Create<br>Something Great</h2>
           <p class="section-desc">
             Have a project in mind? Let's discuss how we can work together.
           </p>
@@ -422,13 +457,13 @@
             <input type="hidden" name="access_key" value="4500af88-fd99-468e-a028-7f5ced8d92a6">
 
             <div class="form-group">
-              <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+              <input type="text" name="name" class="form-input" placeholder="Your Name" aria-label="Your Name" autocomplete="name" required>
             </div>
             <div class="form-group">
-              <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+              <input type="email" name="email" class="form-input" placeholder="Your Email" aria-label="Your Email" autocomplete="email" required>
             </div>
             <div class="form-group">
-              <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+              <textarea name="message" class="form-input" placeholder="Your Message" aria-label="Your Message" required></textarea>
             </div>
 
             <!-- Hidden Subject Field -->
@@ -448,34 +483,45 @@
           </a>
         </div>
 
-        <div class="contact-info">
-          <a href="tel:9044834938" class="contact-phone">
+        <div class="contact-info" aria-label="Contact details">
+          <a href="tel:9044834938" class="contact-method">
             <i class="fas fa-phone"></i>
-            <span>+91 9044834938</span>
+            <span>
+              <strong>Phone</strong>
+              +91 9044834938
+            </span>
+          </a>
+          <a href="mailto:utkarshtripathi180@gmail.com" class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <span>
+              <strong>Email</strong>
+              utkarshtripathi180@gmail.com
+            </span>
           </a>
         </div>
 
         <div class="social-links">
-          <a href="https://www.linkedin.com/in/utkarsh-tripathi-402935284" target="_blank" class="social-link">
+          <a href="https://www.linkedin.com/in/utkarsh-tripathi-402935284" target="_blank" rel="noreferrer" class="social-link" aria-label="LinkedIn profile">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="mailto:utkarshtripathi180@gmail.com" class="social-link">
+          <a href="mailto:utkarshtripathi180@gmail.com" class="social-link" aria-label="Email Utkarsh">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://github.com" target="_blank" class="social-link">
+          <a href="https://github.com" target="_blank" rel="noreferrer" class="social-link" aria-label="GitHub profile">
             <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
         <p class="footer-copy">
-          © 2025 <span>Utkarsh Tripathi</span>. All rights reserved.
+          &copy; 2025 <span>Utkarsh Tripathi</span>. All rights reserved.
         </p>
         <p class="footer-note">
           Designed & Built with <i class="fas fa-heart"></i>
